@@ -19,24 +19,24 @@
 -(NSUInteger)supportedInterfaceOrientations {
 	
 	// iPhone only
-	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-		return UIInterfaceOrientationMaskLandscape;
-	
+    //	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+    //		return UIInterfaceOrientationMaskLandscape;
+    //
 	// iPad only
-	return UIInterfaceOrientationMaskLandscape;
+	return NO;//UIInterfaceOrientationMaskLandscape;
 }
 
 // Supported orientations. Customize it for your own needs
 // Only valid on iOS 4 / 5. NOT VALID for iOS 6.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	// iPhone only
-	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-		return UIInterfaceOrientationIsLandscape(interfaceOrientation);
-	
+    //	// iPhone only
+    //	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+    //		return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    //
 	// iPad only
 	// iPhone only
-	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+	return NO;//UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 // This is needed for iOS4 and iOS5 in order to ensure
@@ -48,6 +48,7 @@
 		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
 		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
 		[director runWithScene: [IntroLayer scene]];
+        [director setDisplayStats:NO];
 	}
 }
 @end
@@ -63,27 +64,15 @@
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
 	
-	// CCGLView creation
-	// viewWithFrame: size of the OpenGL view. For full screen use [_window bounds]
-	//  - Possible values: any CGRect
-	// pixelFormat: Format of the render buffer. Use RGBA8 for better color precision (eg: gradients). But it takes more memory and it is slower
-	//	- Possible values: kEAGLColorFormatRGBA8, kEAGLColorFormatRGB565
-	// depthFormat: Use stencil if you plan to use CCClippingNode. Use Depth if you plan to use 3D effects, like CCCamera or CCNode#vertexZ
-	//  - Possible values: 0, GL_DEPTH_COMPONENT24_OES, GL_DEPTH24_STENCIL8_OES
-	// sharegroup: OpenGL sharegroup. Useful if you want to share the same OpenGL context between different threads
-	//  - Possible values: nil, or any valid EAGLSharegroup group
-	// multiSampling: Whether or not to enable multisampling
-	//  - Possible values: YES, NO
-	// numberOfSamples: Only valid if multisampling is enabled
-	//  - Possible values: 0 to glGetIntegerv(GL_MAX_SAMPLES_APPLE)
+	// Create an CCGLView with a RGB565 color buffer, and a depth buffer of 0-bits
 	CCGLView *glView = [CCGLView viewWithFrame:[window_ bounds]
-								   pixelFormat:kEAGLColorFormatRGB565
-								   depthFormat:0
+								   pixelFormat:kEAGLColorFormatRGB565	//kEAGLColorFormatRGBA8
+								   depthFormat:0	//GL_DEPTH_COMPONENT24_OES
 							preserveBackbuffer:NO
 									sharegroup:nil
 								 multiSampling:NO
 							   numberOfSamples:0];
-	
+	[glView setMultipleTouchEnabled:YES];
 	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
 	
 	director_.wantsFullScreenLayout = YES;
@@ -126,7 +115,7 @@
 	// Create a Navigation Controller with the Director
 	navController_ = [[MyNavigationController alloc] initWithRootViewController:director_];
 	navController_.navigationBarHidden = YES;
-
+    
 	// for rotation and other messages
 	[director_ setDelegate:navController_];
 	
@@ -149,7 +138,7 @@
 // call got rejected
 -(void) applicationDidBecomeActive:(UIApplication *)application
 {
-	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];	
+	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 	if( [navController_ visibleViewController] == director_ )
 		[director_ resume];
 }
