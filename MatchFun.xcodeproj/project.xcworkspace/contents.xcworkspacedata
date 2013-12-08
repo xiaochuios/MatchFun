@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MarchFun.xcodeproj">
+      location = "self:MatchFun.xcodeproj">
    </FileRef>
 </Workspace>

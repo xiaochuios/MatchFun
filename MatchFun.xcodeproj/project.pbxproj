@@ -213,7 +213,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18F343671854989C0070F630 /* MarchFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarchFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F343671854989C0070F630 /* MatchFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F3436A1854989C0070F630 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		18F3436C1854989C0070F630 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		18F3436E1854989C0070F630 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -608,7 +608,7 @@
 		18F3435E1854989C0070F630 = {
 			isa = PBXGroup;
 			children = (
-				18F3437E1854989C0070F630 /* MarchFun */,
+				18F3437E1854989C0070F630 /* MatchFun */,
 				18F343691854989C0070F630 /* Frameworks */,
 				18F343681854989C0070F630 /* Products */,
 			);
@@ -617,7 +617,7 @@
 		18F343681854989C0070F630 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18F343671854989C0070F630 /* MarchFun.app */,
+				18F343671854989C0070F630 /* MatchFun.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -639,7 +639,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		18F3437E1854989C0070F630 /* MarchFun */ = {
+		18F3437E1854989C0070F630 /* MatchFun */ = {
 			isa = PBXGroup;
 			children = (
 				18F345D01854A1750070F630 /* Double */,
@@ -652,6 +652,7 @@
 				18F343971854989C0070F630 /* libs */,
 				18F3450B1854989E0070F630 /* Supporting Files */,
 			);
+			name = MatchFun;
 			path = MarchFun;
 			sourceTree = "<group>";
 		};
@@ -1105,7 +1106,6 @@
 		18F345D01854A1750070F630 /* Double */ = {
 			isa = PBXGroup;
 			children = (
-				18F3451E18549A680070F630 /* configdouble.h */,
 				18F345CD18549B9A0070F630 /* DotdoubleHudController.h */,
 				18F3452118549A680070F630 /* DatadoubleHandle.h */,
 				18F3452218549A680070F630 /* DatadoubleHandle.m */,
@@ -1114,6 +1114,8 @@
 				18F3453118549A690070F630 /* DotPlayingdoubleScnen.m */,
 				18F3453518549A690070F630 /* doubleDownStateLayer.h */,
 				18F3453618549A690070F630 /* doubleDownStateLayer.m */,
+				18F3451E18549A680070F630 /* configdouble.h */,
+				18F3456D18549A690070F630 /* PauseLayer.m */,
 				18F3453718549A690070F630 /* doublePauseLayer.h */,
 				18F3453818549A690070F630 /* doublePauseLayer.m */,
 				18F3453918549A690070F630 /* doubleScoreLayer.h */,
@@ -1163,7 +1165,6 @@
 				18F3453F18549A690070F630 /* DrawSprite.h */,
 				18F3454018549A690070F630 /* DrawSprite.m */,
 				18F3456C18549A690070F630 /* PauseLayer.h */,
-				18F3456D18549A690070F630 /* PauseLayer.m */,
 				18F3457E18549A690070F630 /* TopScoreLayer.h */,
 				18F3457F18549A690070F630 /* TopScoreLayer.m */,
 				18F3458018549A690070F630 /* UpStateLayer.h */,
@@ -1175,9 +1176,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18F343661854989C0070F630 /* MarchFun */ = {
+		18F343661854989C0070F630 /* MatchFun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18F3451A1854989E0070F630 /* Build configuration list for PBXNativeTarget "MarchFun" */;
+			buildConfigurationList = 18F3451A1854989E0070F630 /* Build configuration list for PBXNativeTarget "MatchFun" */;
 			buildPhases = (
 				18F343631854989C0070F630 /* Sources */,
 				18F343641854989C0070F630 /* Frameworks */,
@@ -1187,9 +1188,9 @@
 			);
 			dependencies = (
 			);
-			name = MarchFun;
+			name = MatchFun;
 			productName = MarchFun;
-			productReference = 18F343671854989C0070F630 /* MarchFun.app */;
+			productReference = 18F343671854989C0070F630 /* MatchFun.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1206,7 +1207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 18F343621854989C0070F630 /* Build configuration list for PBXProject "MarchFun" */;
+			buildConfigurationList = 18F343621854989C0070F630 /* Build configuration list for PBXProject "MatchFun" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1218,7 +1219,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18F343661854989C0070F630 /* MarchFun */,
+				18F343661854989C0070F630 /* MatchFun */,
 			);
 		};
 /* End PBXProject section */
@@ -1493,7 +1494,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MatchFun;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1513,7 +1514,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MatchFun;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1522,7 +1523,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18F343621854989C0070F630 /* Build configuration list for PBXProject "MarchFun" */ = {
+		18F343621854989C0070F630 /* Build configuration list for PBXProject "MatchFun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18F345181854989E0070F630 /* Debug */,
@@ -1531,13 +1532,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18F3451A1854989E0070F630 /* Build configuration list for PBXNativeTarget "MarchFun" */ = {
+		18F3451A1854989E0070F630 /* Build configuration list for PBXNativeTarget "MatchFun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18F3451B1854989E0070F630 /* Debug */,
 				18F3451C1854989E0070F630 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
