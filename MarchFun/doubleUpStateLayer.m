@@ -40,11 +40,11 @@
         [self addChild:menu];
         
         m_labelScore = [CCLabelTTF labelWithString:@"0" fontName:@"Arial" fontSize:18];
-        m_labelTime  = [CCLabelTTF labelWithString:@"60" fontName:@"Arial" fontSize:18];
+        m_labelTime  = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:18];
         scorelabel=[CCLabelTTF labelWithString:@"Score" fontName:@"Arial" fontSize:20];
         timelabel=[CCLabelTTF labelWithString:@"Time" fontName:@"Arial" fontSize:20];
         m_labelScore1 = [CCLabelTTF labelWithString:@"0" fontName:@"Arial" fontSize:18];
-        m_labelTime1  = [CCLabelTTF labelWithString:@"60" fontName:@"Arial" fontSize:18];
+        m_labelTime1  = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:18];
         scorelabel1=[CCLabelTTF labelWithString:@"Score" fontName:@"Arial" fontSize:20];
         timelabel1=[CCLabelTTF labelWithString:@"Time" fontName:@"Arial" fontSize:20];
         
