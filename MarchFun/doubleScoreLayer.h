@@ -13,6 +13,7 @@
 @interface doubleScoreLayer : CCLayerColor {
     
     CCLabelTTF * m_logoLabel;
+    CCLabelTTF * m_logoLabel1;
     
     //    CCLabelTTF * m_levelLabel;
     //
@@ -20,14 +21,17 @@
     //
     //    CCLabelTTF * m_highScore;
     CCMenuItemImage * m_exittomain;
+        CCMenuItemImage * m_exittomain1;
     
     CCLabelTTF * m_thisRound;
+     CCLabelTTF * m_thisRound1;
     
     CCProgressTimer * m_expProgress;
     
     
     
     CCMenuItemImage * m_imageItem;
+    CCMenuItemImage * m_imageItem1;
     
     CGPoint m_touchStartLocation;
     
@@ -38,8 +42,9 @@
 
 +(CCScene*) scene;
 
--(void) startAnimationDisplay:(NSInteger) score;
+-(void) startAnimationDisplay:(NSInteger) score score2:(NSInteger) score2;
 
 -(void) startAnimationDisplay;
+-(void) setscore2:(NSInteger) score;
 
 @end

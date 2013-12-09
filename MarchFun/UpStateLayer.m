@@ -15,13 +15,13 @@
 - (id)init
 {
     CGSize s = [CCDirector sharedDirector].winSize;
-    self = [super initWithColor:ccc4(198, 203, 206, 255) width:s.width height:60];
+    self = [super initWithColor:ccc4(255,255,255, 255) width:s.width height:80];
     if (self) {
-        m_scoreItem = [CCMenuItemImage itemWithNormalImage:@"scorebutton.png"
-                                             selectedImage:@"score_unselect.png" target:self selector:@selector(menuBePressed:)];
+        m_scoreItem = [CCMenuItemImage itemWithNormalImage:@"score_unselect.png"
+                                             selectedImage:@"scorebutton.png" target:self selector:@selector(menuBePressed:)];
         
-        m_timeItem = [CCMenuItemImage itemWithNormalImage:@"timebutton.png"
-                                            selectedImage:@"time_unselect.png" target:self selector:@selector(menuBePressed:)];
+        m_timeItem = [CCMenuItemImage itemWithNormalImage:@"time_unselect.png"
+                                            selectedImage:@"timebutton.png" target:self selector:@selector(menuBePressed:)];
         
         [m_scoreItem setAnchorPoint:ccp(0, 0)];
         [m_timeItem setAnchorPoint:ccp(1, 0)];
@@ -32,7 +32,7 @@
         
         CCMenu * menu = [CCMenu menuWithItems:m_scoreItem, m_timeItem, nil];
         
-        [menu setPosition:ccp(0, 2)];
+        [menu setPosition:ccp(0, -100)];
         [self addChild:menu];
         
         m_labelScore = [CCLabelTTF labelWithString:@"0" fontName:@"Arial" fontSize:18];
@@ -79,8 +79,8 @@
     [self setAnchorPoint:ccp(0, 0)];
     [self setPosition:ccp(0, s.height)];
     
-    CCMoveTo * moveTo = [CCMoveTo actionWithDuration:0.2 position:ccp(0, s.height-60)];
-    CCMoveTo * moveTo2 = [CCMoveTo actionWithDuration:0.2 position:ccp(0, s.height-43)];
+    CCMoveTo * moveTo = [CCMoveTo actionWithDuration:0.2 position:ccp(0, s.height)];
+    CCMoveTo * moveTo2 = [CCMoveTo actionWithDuration:0.2 position:ccp(0, s.height-80)];
     CCCallBlock * call = [CCCallBlock actionWithBlock:^{
         if (self.parent) {
             DotHudController * dhc = (DotHudController*)self.parent;

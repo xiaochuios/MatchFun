@@ -33,70 +33,54 @@
         [self setAnchorPoint:ccp(0, 0)];
         m_logoLabel = [CCLabelTTF labelWithString:@"Score" fontName:@"Arial" fontSize:32];
         [m_logoLabel setColor:ccc3(0, 0, 0)];
-        [m_logoLabel setPosition:ccp(s.width/2, s.height - 50)];
+        [m_logoLabel setPosition:ccp(s.width/2, s.height/2 - 50)];
         [self addChild:m_logoLabel];
         
+        m_logoLabel1 = [CCLabelTTF labelWithString:@"Score" fontName:@"Arial" fontSize:32];
+        [m_logoLabel1 setColor:ccc3(0, 0, 0)];
+        [m_logoLabel1 setPosition:ccp(s.width/2, s.height - 450)];
+         [m_logoLabel1 setRotation:180];
+        [self addChild:m_logoLabel1];
+        
         //        CCSprite * levelSprite
-        CCSprite * thisRound = [CCSprite spriteWithFile:@"thisRoundScore.png"];
-        [thisRound setPosition:ccp(s.width/2, s.height-130)];
-        [self addChild:thisRound];
-        m_thisRound = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:18];
+//        CCSprite * thisRound = [CCSprite spriteWithFile:@"thisRoundScore.png"];
+//        [thisRound setPosition:ccp(s.width/2, s.height-130)];
+//        [self addChild:thisRound];
+        m_thisRound = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:25];
         [m_thisRound setColor:ccc3(0, 0, 0)];
-        [m_thisRound setPosition:ccp(70, 10)];
-        [thisRound addChild:m_thisRound];
+    [m_thisRound setPosition:ccp(s.width/2, s.height/2 - 150)];
+        [self addChild:m_thisRound];
+        m_thisRound1 = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:25];
+        [m_thisRound1 setColor:ccc3(0, 0, 0)];
+        [m_thisRound1 setPosition:ccp(s.width/2, s.height/2+150 )];
+        [m_thisRound1 setRotation:180];
+        [self addChild:m_thisRound1];
         
-        
-        //        CCSprite * highScore = [CCSprite spriteWithFile:@"HighScore.png"];
-        //        [highScore setPosition:ccp(s.width/2, s.height-130)];
-        //        [self addChild:highScore];
-        //        m_highScore = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:18];
-        //        [m_highScore setColor:ccc3(0, 0, 0)];
-        //        [m_highScore setPosition:ccp(40, 10)];
-        //        [highScore addChild:m_highScore];
-        //
-        //        CCSprite * goldSprite = [CCSprite spriteWithFile:@"gold.png"];
-        //        [goldSprite setPosition:ccp(s.width-60, s.height-130)];
-        //        [self addChild:goldSprite];
-        //        m_goldlabel = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:18];
-        //        [m_goldlabel setColor:ccc3(0, 0, 0)];
-        //        [m_goldlabel setPosition:ccp(40, 10)];
-        //        [goldSprite addChild:m_goldlabel];
-        //
-        //
-        //        CCSprite * timerSprite = [CCSprite spriteWithFile:@"timerb.png"];
-        //        [timerSprite setAnchorPoint:ccp(0, 0)];
-        //        [timerSprite setPosition:ccp(20, s.height - 200)];
-        //        [self addChild:timerSprite];
-        //        m_expProgress = [CCProgressTimer progressWithSprite:[CCSprite spriteWithFile:@"timer.png"]];
-        //        [m_expProgress setAnchorPoint:ccp(0,0)];
-        //        [m_expProgress setType:kCCProgressTimerTypeBar];
-        //        [m_expProgress setMidpoint:ccp(0, 0)];
-        //        [m_expProgress setBarChangeRate:ccp(1,0)];
-        //        [m_expProgress setPosition:ccp(3.5, 4.0)];
-        //        [timerSprite addChild:m_expProgress];
-        //        [m_expProgress setPercentage:60];
-        //
-        //
-        //        m_levelLabel = [CCLabelTTF labelWithString:@"level:" fontName:@"Arial" fontSize:18];
-        //        [m_levelLabel setAnchorPoint:ccp(0, 0.5)];
-        //        [m_levelLabel setColor:ccc3(0, 0, 0)];
-        //        [m_levelLabel setPosition:ccp(5, 20)];
-        //        [timerSprite addChild:m_levelLabel];
-        //
-        //        m_tableLayer =  [TableLayer node];
-        //        [m_tableLayer setPosition:ccp(60, s.height/6)];
-        //        [self addChild:m_tableLayer];
+
         m_exittomain = [CCMenuItemImage itemWithNormalImage:@"TopExit.png"
                                               selectedImage:@"TopExit.png" target:self selector:@selector(exitToMainScnen)];
         
         m_imageItem = [CCMenuItemImage itemWithTarget:self selector:@selector(imageItemPressed)];
+        m_exittomain1 = [CCMenuItemImage itemWithNormalImage:@"TopExit.png"
+                                              selectedImage:@"TopExit.png" target:self selector:@selector(exitToMainScnen)];
+        
+        m_imageItem1 = [CCMenuItemImage itemWithTarget:self selector:@selector(imageItemPressed1)];
         
         CCMenu *menu = [CCMenu menuWithItems:m_exittomain,m_imageItem, nil];
+        CCMenu *menu1 = [CCMenu menuWithItems:m_exittomain1,m_imageItem1, nil];
         
-        [menu setPosition:ccp(0, 0)];
-        [m_imageItem setPosition:ccp(s.width/2, s.height/2+150)];
-        [m_exittomain setPosition:ccp(s.width/2, s.height/2)];
+        [menu setAnchorPoint:ccp(0, 0)];
+        [menu setPosition:ccp(0, -250)];
+        [menu1 setAnchorPoint:ccp(0, 0)];
+        [menu1 setPosition:ccp(775, 1300)];
+        [menu1 setRotation:180];
+        
+        [m_imageItem setPosition:ccp(s.width/2, s.height/2+50)];
+        [m_exittomain setPosition:ccp(s.width/2, s.height/2-100)];
+        [m_imageItem1 setPosition:ccp(s.width/2, s.height/2+50)];
+        [m_exittomain1 setPosition:ccp(s.width/2, s.height/2-100)];
         [self addChild:menu];
+        [self addChild:menu1];
         
         
         [self setVisible:false];
@@ -110,7 +94,7 @@
     DotGameScene * scene = [DotGameScene node];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionProgressOutIn transitionWithDuration:0.2 scene:scene]];
 }
--(void)startAnimationDisplay:(NSInteger)score{
+-(void)startAnimationDisplay:(NSInteger)score score2:(NSInteger)score2{
     
     m_imageButtonResponseType = true;//play again
     
@@ -122,7 +106,8 @@
     CCMoveTo  * moveTo = [CCMoveTo actionWithDuration:0.2 position:ccp(0, 0)];
     
     CCCallBlock * callB = [CCCallBlock actionWithBlock:^{
-        [self loadAnimation:score :[[DataController getSharedDataController] readPlayerDefaultProperty]];
+        [self loadAnimation:score :[[DataController getSharedDataController] readPlayerDefaultProperty] score2:score2];
+
     }];
     
     [self runAction:[CCSequence actionOne:moveTo two:callB]];
@@ -132,16 +117,20 @@
     //    [m_imageItem setNormalImage:texture];
     CCSpriteFrame *frame = [CCSpriteFrame frameWithTexture:texture rect:CGRectMake(0, 0, texture.contentSize.width, texture.contentSize.height)];
     [m_imageItem setNormalSpriteFrame:frame];
+    [m_imageItem1 setNormalSpriteFrame:frame];
     
     
     [self setTouchEnabled:true];
 }
 
+-(void)setscore2:(NSInteger)score{
+      [m_thisRound1 setString:[NSString stringWithFormat:@"Winner:%d",score]];
 
+}
 -(void)startAnimationDisplay{
     m_imageButtonResponseType = false;//return back
     [self setVisible:true];
-    [self loadAnimation:0 :[[DataController getSharedDataController] readPlayerDefaultProperty]];
+   // [self loadAnimation:0 :[[DataController getSharedDataController] readPlayerDefaultProperty]];
     
     CCTexture2D * texture = [[CCTextureCache sharedTextureCache] addImage:@"TopExit.png"];
     //    [m_imageItem setNormalImage:texture];
@@ -162,37 +151,39 @@
         [[CCDirector sharedDirector]popScene];
     }
 }
-
-
--(void) loadAnimation:(NSInteger)score :(NSArray*) array{
-    
-    NSInteger level = 1;
-    NSInteger gold = 1;
-    long int exp = 0;
-    
-    
-    if (array) {
-        NSNumber * l = [array objectAtIndex:0];
-        NSNumber * g = [array objectAtIndex:1];
-        NSNumber * e = [array objectAtIndex:2];
-        
-        level = l.integerValue;
-        gold = g.integerValue;
-        exp = e.longValue;
-    }
-    
-    //    [m_levelLabel setString:[NSString stringWithFormat:@"level:%d",level]];
-    //    [m_goldlabel setString:[NSString stringWithFormat:@"%d",gold]];
-    [m_thisRound setString:[NSString stringWithFormat:@"%d",score]];
-    
-    //    [m_highScore setString:[NSString stringWithFormat:@"%d",high]];
+-(void) imageItemPressed1{
     
     if (m_imageButtonResponseType) {
-        [m_thisRound setString:[NSString stringWithFormat:@"%d",score]];
+        
+        CCScene * playingScene = [DotPlayingdoubleScnen scene];
+        
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionMoveInR transitionWithDuration:0.2 scene:playingScene]];
     }else{
-        [m_thisRound setString:@"--"];
+        [[CCDirector sharedDirector]popScene];
     }
+}
+
+
+-(void) loadAnimation:(NSInteger)score :(NSArray*) array score2:(NSInteger)score2{
     
+
+    
+    if(score>score2){
+     [m_thisRound setString:[NSString stringWithFormat:@"You WIN（%d）",score]];
+     [m_thisRound1 setString:[NSString stringWithFormat:@"You lose（%d）",score2]];
+    }
+    else if (score==score2){
+        [m_thisRound setString:[NSString stringWithFormat:@"Draw（%d）",score]];
+        [m_thisRound1 setString:[NSString stringWithFormat:@"Draw（%d）",score2]];
+    }
+    else{
+        [m_thisRound setString:[NSString stringWithFormat:@"You lose（%d）",score]];
+        [m_thisRound1 setString:[NSString stringWithFormat:@"You WIN（%d）",score2]];
+    
+    }
+  
+    
+
     
 }
 

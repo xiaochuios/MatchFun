@@ -15,13 +15,13 @@
 - (id)init
 {
     CGSize s = [CCDirector sharedDirector].winSize;
-    self = [super initWithColor:ccc4(255,255,255, 255) width:s.width height:60];
+    self = [super initWithColor:ccc4(255,255,255, 255) width:s.width height:80];
     if (self) {
-        m_scoreItem = [CCMenuItemImage itemWithNormalImage:@"scorebutton.png"
-                                             selectedImage:@"score_unselect.png" target:self selector:@selector(menuBePressed:)];
+        m_scoreItem = [CCMenuItemImage itemWithNormalImage:@"score_unselect.png"
+                                             selectedImage:@"scorebutton.png" target:self selector:@selector(menuBePressed:)];
         
-        m_timeItem = [CCMenuItemImage itemWithNormalImage:@"timebutton.png"
-                                            selectedImage:@"time_unselect.png" target:self selector:@selector(menuBePressed:)];
+        m_timeItem = [CCMenuItemImage itemWithNormalImage:@"time_unselect.png"
+                                            selectedImage:@"timebutton.png" target:self selector:@selector(menuBePressed:)];
         
         [m_scoreItem setAnchorPoint:ccp(1, 0)];
         [m_timeItem setAnchorPoint:ccp(0, 0)];
@@ -29,14 +29,14 @@
 //        [m_scoreItem setPosition:ccp(0, 0)];
 //        [m_timeItem setPosition:ccp(s.width/2+70, 82)];
 //        [m_timeItem setRotation:180];
-                [m_scoreItem setPosition:ccp(s.width/2+225, 53)];
-                [m_timeItem setPosition:ccp(0, 0)];
+                [m_scoreItem setPosition:ccp(s.width/2+115, 0+82)];
+                [m_timeItem setPosition:ccp(-50, 0)];
                 [m_scoreItem setRotation:180];
         
         
         CCMenu * menu = [CCMenu menuWithItems:m_scoreItem, m_timeItem, nil];
         //[menu setRotation:180];
-        [menu setPosition:ccp(0, -s.height/2)];
+        [menu setPosition:ccp(0, -s.height/2-50)];
         [self addChild:menu];
         
         m_labelScore = [CCLabelTTF labelWithString:@"0" fontName:@"Arial" fontSize:18];

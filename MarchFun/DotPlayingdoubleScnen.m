@@ -83,7 +83,7 @@
 
 -(void) startTimerCounter{
     m_pause = false;
-    m_timeCounter = 60;
+    m_timeCounter = 30;
     [self schedule:@selector(tick:)];
 }
 
@@ -100,8 +100,8 @@
             [m_huddoubleController resetTimeString:[NSString stringWithFormat:@"%d",m_timeCounter]];
             [m_data moveOut];
             //            [m_hudController gamePause];
-            [m_huddoubleController currentGameOver:m_score];
-            if(m_score < m_score2) [m_huddoubleController currentGameOver:m_score];
+            [m_huddoubleController currentGameOver:m_score score2:m_score2];
+            
             [self unscheduleAllSelectors];
         }else{
             [m_huddoubleController resetTimeString:[NSString stringWithFormat:@"%d",m_timeCounter]];

@@ -47,7 +47,7 @@ static DataController * _sharedDataController=NULL;
                                                              NSUserDomainMask, YES);
         NSString * documentsDirectory = [paths objectAtIndex:0];
         if (!documentsDirectory) {
-            NSLog(@"读取硬盘文件夹 document 失败");
+           // NSLog(@"读取硬盘文件夹 document 失败");
 //            return NULL;
         }
         
@@ -55,7 +55,7 @@ static DataController * _sharedDataController=NULL;
         
         m_filePath = [[documentsDirectory stringByAppendingPathComponent:@"data"]retain];
         
-        NSLog(@"%@",m_filePath); 
+        //NSLog(@"%@",m_filePath);
     }
     return self;
 }

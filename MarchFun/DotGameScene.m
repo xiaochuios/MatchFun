@@ -49,7 +49,7 @@
     [super onEnter];
     
     CGSize size = [CCDirector sharedDirector].winSize;
-    m_logo = [CCMenuItemImage itemWithNormalImage:@"dots_logo_ipad.png" selectedImage:@"dots_logo_ipad.png"];
+    m_logo = [CCMenuItemImage itemWithNormalImage:@"dots_logo_ipad@2x.png" selectedImage:@"dots_logo_ipad@2x.png"];
     m_singleplay=[CCMenuItemImage itemWithNormalImage:@"play_now.png" selectedImage:@"play_now.png" target:self selector:@selector(playingNow:)];
     
     
@@ -63,7 +63,7 @@
     
     CCMenu *menu = [CCMenu menuWithItems:m_logo,m_singleplay,m_playnow,nil];
     
-    [menu alignItemsVerticallyWithPadding:10];
+    [menu alignItemsVerticallyWithPadding:50];
     
     [menu setPosition:ccp(size.width/2,size.height/2)];
     
@@ -100,7 +100,7 @@
 
 -(void)onEnterTransitionDidFinish{
     [super onEnterTransitionDidFinish];
-    NSLog(@"trans");
+    //NSLog(@"trans");
 }
 
 @end

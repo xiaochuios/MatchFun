@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8ED89589-C555-43A1-8D7A-B48F3E365C2E</string>
+	<string>35299C62-3BDF-413D-999E-633A1476322F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MatchFun</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>BE16222A-11D6-49A4-8F16-21030161AB90</key>
-		<string>https://github.com/xiaochuios/MarchFun.git</string>
+		<key>AA23E535-7778-4935-9E25-2CBEBA437B99</key>
+		<string>https://github.com/xiaochuios/MatchFun.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MatchFun.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>BE16222A-11D6-49A4-8F16-21030161AB90</key>
+		<key>AA23E535-7778-4935-9E25-2CBEBA437B99</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/xiaochuios/MarchFun.git</string>
+	<string>https://github.com/xiaochuios/MatchFun.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BE16222A-11D6-49A4-8F16-21030161AB90</string>
+	<string>AA23E535-7778-4935-9E25-2CBEBA437B99</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BE16222A-11D6-49A4-8F16-21030161AB90</string>
+			<string>AA23E535-7778-4935-9E25-2CBEBA437B99</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MarchFun</string>
+			<string>MatchFun</string>
 		</dict>
 	</array>
 </dict>

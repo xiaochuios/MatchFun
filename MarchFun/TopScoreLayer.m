@@ -26,6 +26,7 @@
 - (id)init
 {
     self = [super initWithColor:ccc4(255,255,255, 255)];
+    
     if (self) {
         CGSize s= [CCDirector sharedDirector].winSize;
         
@@ -36,55 +37,14 @@
         [self addChild:m_logoLabel];
         
 //        CCSprite * levelSprite
-        CCSprite * thisRound = [CCSprite spriteWithFile:@"thisRoundScore.png"];
-        [thisRound setPosition:ccp(s.width/2, s.height-130)];
-        [self addChild:thisRound];
-        m_thisRound = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:18];
+//        CCSprite * thisRound = [CCSprite spriteWithFile:@"thisRoundScore.png"];
+//        [thisRound setPosition:ccp(s.width/2, s.height-130)];
+//        [self addChild:thisRound];
+        m_thisRound = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:25];
         [m_thisRound setColor:ccc3(0, 0, 0)];
-        [m_thisRound setPosition:ccp(70, 10)];
-        [thisRound addChild:m_thisRound];
-        
-        
-//        CCSprite * highScore = [CCSprite spriteWithFile:@"HighScore.png"];
-//        [highScore setPosition:ccp(s.width/2, s.height-130)];
-//        [self addChild:highScore];
-//        m_highScore = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:18];
-//        [m_highScore setColor:ccc3(0, 0, 0)];
-//        [m_highScore setPosition:ccp(40, 10)];
-//        [highScore addChild:m_highScore];
-//        
-//        CCSprite * goldSprite = [CCSprite spriteWithFile:@"gold.png"];
-//        [goldSprite setPosition:ccp(s.width-60, s.height-130)];
-//        [self addChild:goldSprite];
-//        m_goldlabel = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:18];
-//        [m_goldlabel setColor:ccc3(0, 0, 0)];
-//        [m_goldlabel setPosition:ccp(40, 10)];
-//        [goldSprite addChild:m_goldlabel];
-//        
-//        
-//        CCSprite * timerSprite = [CCSprite spriteWithFile:@"timerb.png"];
-//        [timerSprite setAnchorPoint:ccp(0, 0)];
-//        [timerSprite setPosition:ccp(20, s.height - 200)];
-//        [self addChild:timerSprite];
-//        m_expProgress = [CCProgressTimer progressWithSprite:[CCSprite spriteWithFile:@"timer.png"]];
-//        [m_expProgress setAnchorPoint:ccp(0,0)];
-//        [m_expProgress setType:kCCProgressTimerTypeBar];
-//        [m_expProgress setMidpoint:ccp(0, 0)];
-//        [m_expProgress setBarChangeRate:ccp(1,0)];
-//        [m_expProgress setPosition:ccp(3.5, 4.0)];
-//        [timerSprite addChild:m_expProgress];
-//        [m_expProgress setPercentage:60];
-//        
-//        
-//        m_levelLabel = [CCLabelTTF labelWithString:@"level:" fontName:@"Arial" fontSize:18];
-//        [m_levelLabel setAnchorPoint:ccp(0, 0.5)];
-//        [m_levelLabel setColor:ccc3(0, 0, 0)];
-//        [m_levelLabel setPosition:ccp(5, 20)];
-//        [timerSprite addChild:m_levelLabel];
-//        
-//        m_tableLayer =  [TableLayer node];
-//        [m_tableLayer setPosition:ccp(60, s.height/6)];
-//        [self addChild:m_tableLayer];
+        [m_thisRound setPosition:ccp(s.width/2, s.height - 150)];
+        [self addChild:m_thisRound];
+
         m_exittomain = [CCMenuItemImage itemWithNormalImage:@"TopExit.png"
                                               selectedImage:@"TopExit.png" target:self selector:@selector(exitToMainScnen)];
         
@@ -179,18 +139,16 @@
         gold = g.integerValue;
         exp = e.longValue;
     }
+
+    [m_thisRound setString:[NSString stringWithFormat:@"Winner:%d",score]];
     
-//    [m_levelLabel setString:[NSString stringWithFormat:@"level:%d",level]];
-//    [m_goldlabel setString:[NSString stringWithFormat:@"%d",gold]];
-    [m_thisRound setString:[NSString stringWithFormat:@"%d",score]];
+
     
-//    [m_highScore setString:[NSString stringWithFormat:@"%d",high]];
-    
-    if (m_imageButtonResponseType) {
-        [m_thisRound setString:[NSString stringWithFormat:@"%d",score]];
-    }else{
-        [m_thisRound setString:@"--"];
-    }
+//    if (m_imageButtonResponseType) {
+//        [m_thisRound setString:[NSString stringWithFormat:@"%d",score]];
+//    }else{
+//        [m_thisRound setString:@"--"];
+//    }
     
 
 }

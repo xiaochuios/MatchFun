@@ -60,9 +60,9 @@
     [m_resume setPosition:ccp(s.width, s.height/2+100)];
     [m_restart setPosition:ccp(s.width, s.height/2)];
     [m_exittomain setPosition:ccp(s.width, s.height/2-100)];
-    [m_resume1 setPosition:ccp(s.width/2, s.height/2+100)];
-    [m_restart1 setPosition:ccp(s.width/2, s.height/2)];
-    [m_exittomain1 setPosition:ccp(s.width/2, s.height/2-100)];
+    [m_resume1 setPosition:ccp(s.width, s.height/2+100)];
+    [m_restart1 setPosition:ccp(s.width, s.height/2)];
+    [m_exittomain1 setPosition:ccp(s.width, s.height/2-100)];
     
     
     CCMoveTo * moveTo1 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2-15, s.height/2+100)];
@@ -74,9 +74,21 @@
     CCMoveTo * moveTo3 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2-45, s.height/2-100)];
     CCMoveTo * moveTo32 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2, s.height/2-100)];
     
-    [m_resume runAction:[CCSequence actions:moveTo1,moveTo12, nil]];
-    [m_restart runAction:[CCSequence actions:moveTo2, moveTo22 , nil]];
-    [m_exittomain runAction:[CCSequence actions:moveTo3, moveTo32, nil]];
+    CCMoveTo * moveTo11 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2-15, s.height/2+100)];
+    CCMoveTo * moveTo121 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2, s.height/2+100)];
+    
+    CCMoveTo * moveTo21 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2-35, s.height/2)];
+    CCMoveTo * moveTo221 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2, s.height/2)];
+    
+    CCMoveTo * moveTo31 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2-45, s.height/2-100)];
+    CCMoveTo * moveTo321 = [CCMoveTo actionWithDuration:0.2 position:ccp(s.width/2, s.height/2-100)];
+    
+    [m_resume runAction:[CCSequence actions:moveTo11,moveTo121, nil]];
+    [m_restart runAction:[CCSequence actions:moveTo21, moveTo221 , nil]];
+    [m_exittomain runAction:[CCSequence actions:moveTo31, moveTo321, nil]];
+    [m_resume1 runAction:[CCSequence actions:moveTo1,moveTo12, nil]];
+    [m_restart1 runAction:[CCSequence actions:moveTo2, moveTo22 , nil]];
+    [m_exittomain1 runAction:[CCSequence actions:moveTo3, moveTo32, nil]];
 }
 
 

@@ -22,7 +22,7 @@
 
 #define DRAWSPRITE_RADIUES 10
 #define DRAWSPRITE_WIDTH 48.0
-#define DRAWSPRITE_HEIGH 30.0
+#define DRAWSPRITE_HEIGH 40.0
 
 #define AddHeigh 100
 #define addWidth 40

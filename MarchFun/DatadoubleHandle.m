@@ -51,7 +51,7 @@ static inline int calcIndex(int x,int y){
             for (int x = 0; x<TOTALX; x++) {
                 
                 DrawSprite * drawS = [DrawSprite node];
-                [drawS spawnAtX:x Y:y Width:DRAWSPRITE_WIDTH Height:DRAWSPRITE_HEIGH addWidth2:200 AddHeigh2:200];
+                [drawS spawnAtX:x Y:y Width:DRAWSPRITE_WIDTH Height:DRAWSPRITE_HEIGH addWidth2:200 AddHeigh2:100];
                 [m_drawSpriteArray1 addObject:drawS];
                 [self addChild:drawS z:1];
                 
@@ -361,9 +361,9 @@ static inline int calcIndex(int x,int y){
     NSInteger disappearCount = 0;
     
     if (m_stackArray.count>=2) {
-        NSLog(@"if (m_stackArray.count>=2) {");
+        //NSLog(@"if (m_stackArray.count>=2) {");
         if (m_removeAllSameColor) {
-            NSLog(@"if (m_removeAllSameColor) {");
+            //NSLog(@"if (m_removeAllSameColor) {");
             
             [self disappearAllSameColorDotsWithSelected];
             
@@ -834,7 +834,7 @@ static inline int calcIndex(int x,int y){
             //NSLog(@"第一个手指begin");
             [self touchBegine:glLocation];
         }
-        if(glLocation.y>600){
+        if(glLocation.y>550){
             //NSLog(@"第二个手指begin");
             [self touchBegine2:glLocation];
         }
@@ -864,7 +864,7 @@ static inline int calcIndex(int x,int y){
            //NSLog(@"第一个手指move");
            [self touchMove:glLocation];
         }
-       if(glLocation.y>600){
+       if(glLocation.y>550){
           // NSLog(@"第二个手指move");
             [self touchMove2:glLocation];
        }
@@ -896,14 +896,16 @@ static inline int calcIndex(int x,int y){
         CGPoint  glLocation=[[CCDirector sharedDirector] convertToGL:touchLocation];
         glLocation = [self convertToNodeSpace:glLocation];
         
-        if(glLocation.y<500){
-            //NSLog(@"第一个手指move");
-            [self touchEnd];
-        }
-        if(glLocation.y>600){
-            //NSLog(@"第二个手指move");
-            [self touchEnd2];
-        }
+//        if(glLocation.y<500){
+//            //NSLog(@"第一个手指move");
+//            [self touchEnd];
+//        }
+//        if(glLocation.y>550){
+//            //NSLog(@"第二个手指move");
+//            [self touchEnd2];
+//        }
+    [self touchEnd];
+    [self touchEnd2];
     
 }
 
@@ -915,15 +917,16 @@ static inline int calcIndex(int x,int y){
         CGPoint  glLocation=[[CCDirector sharedDirector] convertToGL:touchLocation];
         glLocation = [self convertToNodeSpace:glLocation];
         
-        if(glLocation.y<500){
-            //NSLog(@"第一个手指move");
-            [self touchEnd];
-        }
-        if(glLocation.y>600){
-            //NSLog(@"第二个手指move");
-            [self touchEnd2];
-        }
-    
+//        if(glLocation.y<500){
+//            //NSLog(@"第一个手指move");
+//            [self touchEnd];
+//        }
+//        if(glLocation.y>550){
+//            //NSLog(@"第二个手指move");
+//            [self touchEnd2];
+//        }
+    [self touchEnd];
+    [self touchEnd2];
 }
 
 -(void)moveOut{

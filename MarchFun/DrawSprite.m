@@ -60,6 +60,31 @@
     }
 }
 
+-(void) calcColor2{
+    int type = arc4random()%TOTAL_TYPE;
+    switch (type) {
+        case 0:
+            m_color = ccc4fBlue2;
+            break;
+        case 1:
+            m_color = ccc4fGreen2;
+            break;
+        case 2:
+            m_color = ccc4fRed2;
+            break;
+        case 3:
+            m_color = ccc4fPurple2;
+            break;
+        case 4:
+            m_color = ccc4fOrange2;
+            break;
+            
+        default:
+            m_color = ccc4fPurple2;
+            break;
+    }
+}
+
 -(void)spawnAtX:(NSInteger)x Y:(NSInteger)y Width:(CGFloat)w Height:(CGFloat)h addWidth2:(NSInteger)a AddHeigh2:(NSInteger)b{
     
     m_hasSelected = YES;
@@ -109,7 +134,7 @@
     m_w = w*2;
     m_h = h*2;
     
-    [self calcColor];
+    [self calcColor2];
     
     //    [self setContentSize:CGSizeMake(DRAWSPRITE_RADIUES, DRAWSPRITE_RADIUES)];
     
@@ -172,7 +197,7 @@
     [m_selectNode clear];
     [m_selectNode setScale:1.0];
     
-    [self calcColor];
+    [self calcColor2];
     
   //  CGSize size = [CCDirector sharedDirector].winSize;
     CGFloat wd = [self anchorPoint].x * m_w - m_x * m_w +addWidth2;

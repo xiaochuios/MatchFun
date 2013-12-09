@@ -69,13 +69,15 @@
     }
 }
 
--(void) currentGameOver:(NSInteger)score{
+-(void) currentGameOver:(NSInteger)score score2:(NSInteger)score2{
     
     
     [m_downStateLayer setVisible:false];;
     [m_upstateLayer setVisible:false];
     [m_pauseLayer setVisible:false];
-    [m_topScoreLayer startAnimationDisplay:score];
+    [m_topScoreLayer startAnimationDisplay:score score2:score2];
+     //[m_topScoreLayer setscore2:score2];
+    
 }
 
 
